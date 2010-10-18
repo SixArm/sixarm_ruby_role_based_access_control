@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: RoleBasedAccessControlTest</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./test/sixarm_ruby_role_based_access_control_test_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="test/sixarm_ruby_role_based_access_control_test.rb">test/sixarm_ruby_role_based_access_control_test.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Test::Unit::TestCase</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000000">#setup</a></li>
+					
+					<li><a href="#M000060">#test_active_role_set_is_subset_of_roles_assigned_to_user</a></li>
+					
+					<li><a href="#M000056">#test_active_roles</a></li>
+					
+					<li><a href="#M000057">#test_active_roles_include</a></li>
+					
+					<li><a href="#M000038">#test_add_active_role</a></li>
+					
+					<li><a href="#M000030">#test_add_role</a></li>
+					
+					<li><a href="#M000028">#test_add_user</a></li>
+					
+					<li><a href="#M000032">#test_assign_user</a></li>
+					
+					<li><a href="#M000042">#test_assigned_roles</a></li>
+					
+					<li><a href="#M000041">#test_assigned_users</a></li>
+					
+					<li><a href="#M000040">#test_check_access</a></li>
+					
+					<li><a href="#M000036">#test_create_session</a></li>
+					
+					<li><a href="#M000033">#test_deassign_user</a></li>
+					
+					<li><a href="#M000037">#test_delete_session</a></li>
+					
+					<li><a href="#M000031">#test_delete_user</a></li>
+					
+					<li><a href="#M000029">#test_delete_user</a></li>
+					
+					<li><a href="#M000039">#test_drop_active_role</a></li>
+					
+					<li><a href="#M000034">#test_grant_permission</a></li>
+					
+					<li><a href="#M000052">#test_permissions</a></li>
+					
+					<li><a href="#M000053">#test_permissions_include</a></li>
+					
+					<li><a href="#M000035">#test_revoke_permission</a></li>
+					
+					<li><a href="#M000046">#test_role_operations_on_object</a></li>
+					
+					<li><a href="#M000044">#test_role_permissions</a></li>
+					
+					<li><a href="#M000050">#test_roles</a></li>
+					
+					<li><a href="#M000051">#test_roles_include</a></li>
+					
+					<li><a href="#M000045">#test_session_permissions</a></li>
+					
+					<li><a href="#M000054">#test_sessions</a></li>
+					
+					<li><a href="#M000055">#test_sessions_include</a></li>
+					
+					<li><a href="#M000047">#test_user_operations_on_object</a></li>
+					
+					<li><a href="#M000061">#test_user_owns_session</a></li>
+					
+					<li><a href="#M000043">#test_user_permissions</a></li>
+					
+					<li><a href="#M000058">#test_user_role_assignments</a></li>
+					
+					<li><a href="#M000059">#test_user_role_assignments_include</a></li>
+					
+					<li><a href="#M000048">#test_users</a></li>
+					
+					<li><a href="#M000049">#test_users_include</a></li>
+					
+					<li><a href="#M000003">#test_valid_iff_false</a></li>
+					
+					<li><a href="#M000002">#test_valid_iff_true</a></li>
+					
+					<li><a href="#M000027">#test_valid_only_if_false</a></li>
+					
+					<li><a href="#M000026">#test_valid_only_if_true</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./LICENSE_txt.html">LICENSE.txt</a></li>
+				
+					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+				
+					<li class="file"><a href="./sixarm_ruby_role_based_access_control_gemspec.html">sixarm_ruby_role_based_access_control.gemspec</a></li>
+				
+					<li class="file"><a href="./sixarm_ruby_role_based_access_control_sha512_txt.html">sixarm_ruby_role_based_access_control.sha512.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./RoleBasedAccessControl.html">RoleBasedAccessControl</a></li>
+				
+					<li><a href="./RoleBasedAccessControl/RoleBasedAccessControlInvalidArgumentError.html">RoleBasedAccessControl::RoleBasedAccessControlInvalidArgumentError</a></li>
+				
+					<li><a href="./RoleBasedAccessControlTest.html">RoleBasedAccessControlTest</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">RoleBasedAccessControlTest</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="setup-method" class="method-detail ">
+				<a name="M000000"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">setup</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="setup-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 6</span>
+ 6:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup</span>
+ 7:     <span class="ruby-ivar">@rbac</span> = <span class="ruby-constant">RoleBasedAccessControl</span>.<span class="ruby-identifier">new</span>
+ 8:     <span class="ruby-ivar">@user</span>=<span class="ruby-value str">'user_1'</span>
+ 9:     <span class="ruby-ivar">@role</span>=<span class="ruby-value str">'role_1'</span>
+10:     <span class="ruby-ivar">@object</span>=<span class="ruby-value str">'object_1'</span>
+11:     <span class="ruby-ivar">@permission</span>=<span class="ruby-value str">'permission_1'</span>
+12:     <span class="ruby-ivar">@operation</span>=<span class="ruby-value str">'operation_1'</span>
+13:     <span class="ruby-ivar">@session</span>=<span class="ruby-value str">'session_1'</span>
+14:     <span class="ruby-ivar">@active_role</span>=<span class="ruby-value str">'active_role_1'</span>
+15:     <span class="ruby-ivar">@users</span>=[<span class="ruby-value str">'user_1'</span>,<span class="ruby-value str">'user_2'</span>,<span class="ruby-value str">'user_3'</span>]
+16:     <span class="ruby-ivar">@roles</span>=[<span class="ruby-value str">'role_1'</span>,<span class="ruby-value str">'role_2'</span>,<span class="ruby-value str">'role_3'</span>]
+17:     <span class="ruby-ivar">@permissions</span>=[<span class="ruby-value str">'permission_1'</span>,<span class="ruby-value str">'permission_2'</span>,<span class="ruby-value str">'permission_3'</span>]
+18:     <span class="ruby-ivar">@sessions</span>=[<span class="ruby-value str">'session_1'</span>,<span class="ruby-value str">'session_2'</span>,<span class="ruby-value str">'session_3'</span>]
+19:     <span class="ruby-ivar">@operations</span>=[<span class="ruby-value str">'operation_1'</span>,<span class="ruby-value str">'operation_2'</span>,<span class="ruby-value str">'operation_3'</span>]
+20:     <span class="ruby-ivar">@active_roles</span>=[<span class="ruby-value str">'active_role_1'</span>,<span class="ruby-value str">'active_role_2'</span>,<span class="ruby-value str">'active_role_3'</span>]
+21:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-active-role-set-is-subset-of-roles-assigned-to-user-method" class="method-detail ">
+				<a name="M000060"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_active_role_set_is_subset_of_roles_assigned_to_user</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-active-role-set-is-subset-of-roles-assigned-to-user-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 254</span>
+254:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_active_role_set_is_subset_of_roles_assigned_to_user</span>
+255:     <span class="ruby-comment cmt">#active_role_set_is_subset_of_roles_assigned_to_user?(@user)</span>
+256:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-active-roles-method" class="method-detail ">
+				<a name="M000056"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_active_roles</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-active-roles-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 232</span>
+232:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_active_roles</span>
+233:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">active_roles</span>=<span class="ruby-ivar">@active_roles</span>
+234:     <span class="ruby-comment cmt">#assert_equal(active_roles,rbac.active_roles)</span>
+235:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-active-roles-include-method" class="method-detail ">
+				<a name="M000057"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_active_roles_include</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-active-roles-include-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 237</span>
+237:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_active_roles_include</span>
+238:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">active_roles</span>=<span class="ruby-ivar">@active_roles</span>
+239:     <span class="ruby-comment cmt">#assert( rbac.active_roles_include?(active_role))</span>
+240:     <span class="ruby-comment cmt">#assert(!rbac.active_roles_include?('foo'))</span>
+241:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-add-active-role-method" class="method-detail ">
+				<a name="M000038"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_add_active_role</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-add-active-role-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 119</span>
+119:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_add_active_role</span>
+120:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+121:       <span class="ruby-identifier">add_active_role</span>(<span class="ruby-ivar">@user</span>,<span class="ruby-ivar">@session</span>,<span class="ruby-ivar">@role</span>)
+122:     <span class="ruby-keyword kw">end</span>
+123:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-add-role-method" class="method-detail ">
+				<a name="M000030"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_add_role</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-add-role-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 71</span>
+71:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_add_role</span>
+72:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+73:       <span class="ruby-identifier">add_role</span>(<span class="ruby-ivar">@role</span>)
+74:     <span class="ruby-keyword kw">end</span>
+75:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-add-user-method" class="method-detail ">
+				<a name="M000028"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_add_user</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+ANSI
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-add-user-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 59</span>
+59:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_add_user</span>
+60:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+61:       <span class="ruby-identifier">add_user</span>(<span class="ruby-ivar">@user</span>)
+62:     <span class="ruby-keyword kw">end</span>
+63:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-assign-user-method" class="method-detail ">
+				<a name="M000032"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_assign_user</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-assign-user-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 83</span>
+83:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_assign_user</span>
+84:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+85:       <span class="ruby-identifier">assign_user</span>(<span class="ruby-ivar">@user</span>,<span class="ruby-ivar">@role</span>)
+86:     <span class="ruby-keyword kw">end</span>
+87:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-assigned-roles-method" class="method-detail ">
+				<a name="M000042"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_assigned_roles</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-assigned-roles-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 143</span>
+143:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_assigned_roles</span>
+144:    <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+145:      <span class="ruby-identifier">assigned_roles</span>(<span class="ruby-ivar">@user</span>)
+146:    <span class="ruby-keyword kw">end</span>
+147:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-assigned-users-method" class="method-detail ">
+				<a name="M000041"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_assigned_users</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-assigned-users-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 137</span>
+137:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_assigned_users</span>
+138:    <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+139:      <span class="ruby-identifier">assigned_users</span>(<span class="ruby-ivar">@role</span>)
+140:    <span class="ruby-keyword kw">end</span>
+141:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-check-access-method" class="method-detail ">
+				<a name="M000040"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_check_access</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-check-access-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 131</span>
+131:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_check_access</span>
+132:    <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+133:      <span class="ruby-identifier">check_access</span>(<span class="ruby-ivar">@session</span>,<span class="ruby-ivar">@operation</span>,<span class="ruby-ivar">@object</span>)
+134:    <span class="ruby-keyword kw">end</span>
+135:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-create-session-method" class="method-detail ">
+				<a name="M000036"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_create_session</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-create-session-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 107</span>
+107:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_create_session</span>
+108:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+109:       <span class="ruby-identifier">create_session</span>(<span class="ruby-ivar">@user</span>,<span class="ruby-ivar">@session</span>)
+110:     <span class="ruby-keyword kw">end</span>
+111:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-deassign-user-method" class="method-detail ">
+				<a name="M000033"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_deassign_user</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-deassign-user-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 89</span>
+89:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_deassign_user</span>
+90:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+91:       <span class="ruby-identifier">deassign_user</span>(<span class="ruby-ivar">@user</span>,<span class="ruby-ivar">@role</span>)
+92:     <span class="ruby-keyword kw">end</span>
+93:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-delete-session-method" class="method-detail ">
+				<a name="M000037"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_delete_session</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-delete-session-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 113</span>
+113:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_delete_session</span>
+114:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+115:       <span class="ruby-identifier">delete_session</span>(<span class="ruby-ivar">@user</span>,<span class="ruby-ivar">@session</span>)
+116:     <span class="ruby-keyword kw">end</span>
+117:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-delete-user-method" class="method-detail ">
+				<a name="M000031"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_delete_user</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-delete-user-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 77</span>
+77:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_delete_user</span>
+78:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+79:       <span class="ruby-identifier">delete_role</span>(<span class="ruby-ivar">@role</span>)
+80:     <span class="ruby-keyword kw">end</span>
+81:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-delete-user-method" class="method-detail ">
+				<a name="M000029"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_delete_user</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-delete-user-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 65</span>
+65:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_delete_user</span>
+66:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+67:       <span class="ruby-identifier">delete_user</span>(<span class="ruby-ivar">@user</span>)
+68:     <span class="ruby-keyword kw">end</span>
+69:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-drop-active-role-method" class="method-detail ">
+				<a name="M000039"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_drop_active_role</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-drop-active-role-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 125</span>
+125:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_drop_active_role</span>
+126:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+127:       <span class="ruby-identifier">drop_active_role</span>(<span class="ruby-ivar">@user</span>,<span class="ruby-ivar">@session</span>,<span class="ruby-ivar">@role</span>)
+128:     <span class="ruby-keyword kw">end</span>
+129:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-grant-permission-method" class="method-detail ">
+				<a name="M000034"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_grant_permission</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-grant-permission-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 95</span>
+95:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_grant_permission</span>
+96:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+97:       <span class="ruby-identifier">grant_permission</span>(<span class="ruby-ivar">@object</span>,<span class="ruby-ivar">@operation</span>,<span class="ruby-ivar">@role</span>)
+98:     <span class="ruby-keyword kw">end</span>
+99:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-permissions-method" class="method-detail ">
+				<a name="M000052"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_permissions</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-permissions-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 210</span>
+210:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_permissions</span>
+211:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">permissions</span>=<span class="ruby-ivar">@permissions</span>
+212:     <span class="ruby-comment cmt">#assert_equal(permissions,rbac.permissions)</span>
+213:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-permissions-include-method" class="method-detail ">
+				<a name="M000053"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_permissions_include</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-permissions-include-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 215</span>
+215:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_permissions_include</span>
+216:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">permissions</span>=<span class="ruby-ivar">@permissions</span>
+217:     <span class="ruby-comment cmt">#assert( rbac.permissions_include?(permission))</span>
+218:     <span class="ruby-comment cmt">#assert(!rbac.permissions_include?('foo'))</span>
+219:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-revoke-permission-method" class="method-detail ">
+				<a name="M000035"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_revoke_permission</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-revoke-permission-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 101</span>
+101:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_revoke_permission</span>
+102:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+103:       <span class="ruby-identifier">revoke_permission</span>(<span class="ruby-ivar">@object</span>,<span class="ruby-ivar">@operation</span>,<span class="ruby-ivar">@role</span>)
+104:     <span class="ruby-keyword kw">end</span>
+105:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-role-operations-on-object-method" class="method-detail ">
+				<a name="M000046"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_role_operations_on_object</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-role-operations-on-object-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 167</span>
+167:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_role_operations_on_object</span>
+168:    <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+169:      <span class="ruby-identifier">role_operations_on_object</span>(<span class="ruby-ivar">@role</span>,<span class="ruby-ivar">@object</span>)
+170:    <span class="ruby-keyword kw">end</span>
+171:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-role-permissions-method" class="method-detail ">
+				<a name="M000044"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_role_permissions</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-role-permissions-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 155</span>
+155:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_role_permissions</span>
+156:    <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+157:      <span class="ruby-identifier">role_permissions</span>(<span class="ruby-ivar">@role</span>)
+158:    <span class="ruby-keyword kw">end</span>
+159:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-roles-method" class="method-detail ">
+				<a name="M000050"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_roles</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-roles-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 199</span>
+199:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_roles</span>
+200:     <span class="ruby-identifier">rbac</span>.<span class="ruby-identifier">roles</span>=<span class="ruby-identifier">roles</span>
+201:     <span class="ruby-comment cmt">#assert_equal(roles,rbac.roles)</span>
+202:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-roles-include-method" class="method-detail ">
+				<a name="M000051"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_roles_include</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-roles-include-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 204</span>
+204:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_roles_include</span>
+205:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">roles</span>=<span class="ruby-ivar">@roles</span>
+206:     <span class="ruby-comment cmt">#assert( rbac.roles_include?(@role))</span>
+207:     <span class="ruby-comment cmt">#assert(!rbac.roles_include?('foo'))</span>
+208:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-session-permissions-method" class="method-detail ">
+				<a name="M000045"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_session_permissions</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-session-permissions-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 161</span>
+161:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_session_permissions</span>
+162:    <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+163:      <span class="ruby-identifier">session_permissions</span>(<span class="ruby-ivar">@session</span>)
+164:    <span class="ruby-keyword kw">end</span>
+165:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-sessions-method" class="method-detail ">
+				<a name="M000054"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_sessions</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-sessions-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 221</span>
+221:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_sessions</span>
+222:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">sessions</span>=<span class="ruby-ivar">@sessions</span>
+223:     <span class="ruby-comment cmt">#assert_equal(sessions,rbac.sessions)</span>
+224:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-sessions-include-method" class="method-detail ">
+				<a name="M000055"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_sessions_include</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-sessions-include-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 226</span>
+226:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_sessions_include</span>
+227:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">sessions</span>=<span class="ruby-ivar">@sessions</span>
+228:     <span class="ruby-comment cmt">#assert( rbac.sessions_include?(session))</span>
+229:     <span class="ruby-comment cmt">#assert(!rbac.sessions_include?('foo'))</span>
+230:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-user-operations-on-object-method" class="method-detail ">
+				<a name="M000047"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_user_operations_on_object</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-user-operations-on-object-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 173</span>
+173:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_user_operations_on_object</span>
+174:    <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+175:      <span class="ruby-identifier">user_operations_on_object</span>(<span class="ruby-ivar">@user</span>,<span class="ruby-ivar">@object</span>)
+176:    <span class="ruby-keyword kw">end</span>
+177:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-user-owns-session-method" class="method-detail ">
+				<a name="M000061"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_user_owns_session</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-user-owns-session-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 258</span>
+258:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_user_owns_session</span>
+259:     <span class="ruby-comment cmt">#user_owns_session?(@user,@session)</span>
+260:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-user-permissions-method" class="method-detail ">
+				<a name="M000043"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_user_permissions</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-user-permissions-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 149</span>
+149:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_user_permissions</span>
+150:    <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span> 
+151:      <span class="ruby-identifier">user_permissions</span>(<span class="ruby-ivar">@user</span>)
+152:    <span class="ruby-keyword kw">end</span>
+153:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-user-role-assignments-method" class="method-detail ">
+				<a name="M000058"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_user_role_assignments</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-user-role-assignments-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 243</span>
+243:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_user_role_assignments</span>
+244:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">user_role_assignments</span>=<span class="ruby-ivar">@user_role_assignments</span>
+245:     <span class="ruby-comment cmt">#assert_equal(user_role_assignments,rbac.user_role_assignments)</span>
+246:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-user-role-assignments-include-method" class="method-detail ">
+				<a name="M000059"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_user_role_assignments_include</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-user-role-assignments-include-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 248</span>
+248:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_user_role_assignments_include</span>
+249:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">user_role_assignments</span>=<span class="ruby-ivar">@user_role_assignments</span>
+250:     <span class="ruby-comment cmt">#assert( rbac.user_role_assignments?(user_role_assignment))</span>
+251:     <span class="ruby-comment cmt">#assert(!rbac.user_role_assignments_include?('foo'))</span>
+252:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-users-method" class="method-detail ">
+				<a name="M000048"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_users</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Helpers - not much to test here because implementations will do things
+differently.
+</p>
+<p>
+We have put commented methods here as examples of what you might want to
+call, for your own testing, if you are writing an implementation.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-users-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 188</span>
+188:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_users</span>
+189:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">users</span>=<span class="ruby-ivar">@users</span>
+190:     <span class="ruby-comment cmt">#assert_equal(@users,@rbac.users)</span>
+191:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-users-include-method" class="method-detail ">
+				<a name="M000049"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_users_include</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-users-include-source">
+<pre>
+     <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 193</span>
+193:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_users_include</span>
+194:     <span class="ruby-ivar">@rbac</span>.<span class="ruby-identifier">users</span>=<span class="ruby-ivar">@users</span>
+195:     <span class="ruby-comment cmt">#assert( rbac.users_include?(@user))</span>
+196:     <span class="ruby-comment cmt">#assert(!rbac.users_include?('foo'))</span>
+197:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-valid-iff-false-method" class="method-detail ">
+				<a name="M000003"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_valid_iff_false</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-valid-iff-false-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 35</span>
+35:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_valid_iff_false</span>
+36:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+37:       <span class="ruby-identifier">valid_only_iff</span>(<span class="ruby-keyword kw">false</span>)
+38:     <span class="ruby-keyword kw">end</span>
+39:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-valid-iff-true-method" class="method-detail ">
+				<a name="M000002"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_valid_iff_true</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Test validity methods first
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-valid-iff-true-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 29</span>
+29:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_valid_iff_true</span>
+30:     <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword kw">do</span>
+31:       <span class="ruby-identifier">valid_only_iff</span>(<span class="ruby-keyword kw">true</span>)
+32:     <span class="ruby-keyword kw">end</span>
+33:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-valid-only-if-false-method" class="method-detail ">
+				<a name="M000027"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_valid_only_if_false</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-valid-only-if-false-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 47</span>
+47:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_valid_only_if_false</span>
+48:     <span class="ruby-identifier">assert_raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span> <span class="ruby-keyword kw">do</span>
+49:       <span class="ruby-identifier">valid_only_if</span>(<span class="ruby-keyword kw">false</span>)
+50:     <span class="ruby-keyword kw">end</span>
+51:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="test-valid-only-if-true-method" class="method-detail ">
+				<a name="M000026"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">test_valid_only_if_true</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="test-valid-only-if-true-source">
+<pre>
+    <span class="ruby-comment cmt"># File test/sixarm_ruby_role_based_access_control_test.rb, line 41</span>
+41:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_valid_only_if_true</span>
+42:     <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword kw">do</span>
+43:       <span class="ruby-identifier">valid_only_if</span>(<span class="ruby-keyword kw">false</span>)
+44:     <span class="ruby-keyword kw">end</span>
+45:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
