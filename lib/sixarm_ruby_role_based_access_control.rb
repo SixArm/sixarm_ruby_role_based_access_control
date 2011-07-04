@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 =begin rdoc
 
 = SixArm Ruby Gem: Role Based Access Control
@@ -15,32 +17,32 @@ Ruby interface for the Role Based Access Control (RBAC) specification:
 = What is Core RBAC?
 
 Core RBAC includes sets of five basic data elements called users (USERS),
-roles (ROLES), objects (OBS), operations (OPS), and permissions (PRMS). 
+roles (ROLES), objects (OBS), operations (OPS), and permissions (PRMS).
 
 
 == RBAC model
 
 The RBAC model as a whole is fundamentally defined in terms of individual
 users being assigned to roles and permissions being assigned to roles.
-A role is a means for naming many-to-many relationships 
+A role is a means for naming many-to-many relationships
 among individual users and permissions. In addition, the core RBAC
-model includes a set of sessions (SESSIONS) where each session is 
+model includes a set of sessions (SESSIONS) where each session is
 a mapping between a user and an activated subset of roles that are
 assigned to the user.
 
 
 == Users
 
-A user is defined as a human being. Although the concept of a user 
+A user is defined as a human being. Although the concept of a user
 can be extended to include machines, networks, or intelligent autonomous
 agents, the definition is limited to a person in this document for
-simplicity reasons. 
+simplicity reasons.
 
 
 == Roles
 
-A role is a job function within the context of an organization 
-with some associated semantics regarding the authority and 
+A role is a job function within the context of an organization
+with some associated semantics regarding the authority and
 responsibility conferred on the user assigned to the role.
 
 
@@ -55,8 +57,8 @@ RBAC protected objects.
 An operation is an executable image of a program, which upon invocation
 executes some function for the user. The types of operations and objects
 that RBAC controls are dependent on the type of system in which it will
-be implemented. For example, within a file system, operations might 
-include read, write, and execute; within a database management system, 
+be implemented. For example, within a file system, operations might
+include read, write, and execute; within a database management system,
 operations might include insert, delete, append and update.
 
 
@@ -64,7 +66,7 @@ operations might include insert, delete, append and update.
 
 The purpose of any access control mechanism is to protect system resources (i.e.,
 protected objects). Consistent with earlier models of access control an object is an entity
-that contains or receives information. 
+that contains or receives information.
 
 == System Implementations
 
@@ -72,7 +74,7 @@ For a system that implements RBAC, the objects
 can represent information containers (e.g., files, directories, in an operating system,
 and/or columns, rows, tables, and views within a database management system) or
 objects can represent exhaustible system resources, such as printers, disk space, and CPU
-cycles. 
+cycles.
 
 The set of objects covered by RBAC includes all of the objects listed in the
 permissions that are assigned to roles.
@@ -100,21 +102,21 @@ class RoleBasedAccessControl
 
   ##########################################################################
   #
-  #  ANSI 
+  #  ANSI
   #
   ##########################################################################
 
 
   public
-  
 
-  # This command creates a new RBAC user. 
+
+  # This command creates a new RBAC user.
   #
   # The command is valid only if:
   # - the new user is not already a member of the /USERS/ data set.
   #
-  # The /USER/ data set is updated. 
-  # 
+  # The /USER/ data set is updated.
+  #
   # The new user does not own any session at the time of its creation.
 
   def add_user(user)
@@ -122,18 +124,18 @@ class RoleBasedAccessControl
   end
 
 
-  # This command deletes an existing user from the RBAC database. 
-  # 
+  # This command deletes an existing user from the RBAC database.
+  #
   # The command is valid if and only if:
   # - the user to be deleted is a member of the /USERS/ data set.
   #
-  # The /USERS/ and /UA/  data sets and the /assigned_users/ function are updated. 
+  # The /USERS/ and /UA/  data sets and the /assigned_users/ function are updated.
   #
   # It is an implementation decision how to proceed with the sessions owned by the
-  # user to be deleted. The RBAC system could wait for such a session to terminate 
+  # user to be deleted. The RBAC system could wait for such a session to terminate
   # normally, or it could force its termination.
 
-  def delete_user(user) 
+  def delete_user(user)
     valid_iff(users_include?(user))
   end
 
@@ -143,9 +145,9 @@ class RoleBasedAccessControl
   # The command is valid if and only if:
   # - the new role is not already a member of the /ROLES/ data set.
   #
-  # The /ROLES/ data set and the functions /assigned_users/ and /assigned_permissions/ are updated. 
+  # The /ROLES/ data set and the functions /assigned_users/ and /assigned_permissions/ are updated.
   #
-  # Initially, no user or permission is assigned to the new role. 
+  # Initially, no user or permission is assigned to the new role.
 
   def add_role(role)
     valid_iff(!roles_include?(role))
@@ -155,10 +157,10 @@ class RoleBasedAccessControl
   # This command deletes an existing role from the RBAC database.
   #
   # The command is valid if and only if
-  # - the role to be deleted is a member of the /ROLES/ data set. 
+  # - the role to be deleted is a member of the /ROLES/ data set.
   #
-  # It is an implementation decision how to proceed with the sessions in which the 
-  # role to be deleted is active. The RBAC system could wait for such a session to 
+  # It is an implementation decision how to proceed with the sessions in which the
+  # role to be deleted is active. The RBAC system could wait for such a session to
   # terminate normally, it could force the termination of that session, or it could
   # delete the role from that session while allowing the session to continue.
 
@@ -184,7 +186,7 @@ class RoleBasedAccessControl
   # This command deletes the assignment of the user user to the role role.
   #
   # The command is valid if and only if:
-  # - the user is a member of the USERS data set 
+  # - the user is a member of the USERS data set
   # - the role is a member of the ROLES data set
   # - and the user is assigned to the role
   #
@@ -204,7 +206,7 @@ class RoleBasedAccessControl
   #
   # The command is valid if and only if:
   # - the pair (operation, object) represents a permission
-  # - the role is a member of the ROLES data set. 
+  # - the role is a member of the ROLES data set.
 
   def grant_permission(object,operation,role)
     valid_iff(permissions_include?(operation,object) && roles_include?(role))
@@ -218,20 +220,20 @@ class RoleBasedAccessControl
   #
   # The command is valid if and only if:
   # - the pair (operation, object) represents a permission
-  # - the role is a member of the ROLES data set. 
+  # - the role is a member of the ROLES data set.
 
   def revoke_permission(object,operation,role)
     valid_iff(permissions_include?([object,operation]) && roles_include?(role))
   end
 
 
-  # This function creates a new session with a given user as owner and an active role set. 
+  # This function creates a new session with a given user as owner and an active role set.
   #
   # The function is valid if and only if:
   # - the user is a member of the USERS data set, and
-  # - the active role set is a subset of the roles assigned to that user. 
+  # - the active role set is a subset of the roles assigned to that user.
   #
-  # In a RBAC implementation, the session’s active roles might actually be the 
+  # In a RBAC implementation, the session’s active roles might actually be the
   # groups that represent those roles.
 
   def create_session(user,session)
@@ -251,7 +253,7 @@ class RoleBasedAccessControl
   end
 
 
-  # This function adds a role as an active role of a session whose owner is a given user. 
+  # This function adds a role as an active role of a session whose owner is a given user.
   #
   # The function is valid if and only if:
   # - the user is a member of the USERS data set
@@ -274,7 +276,7 @@ class RoleBasedAccessControl
   # - the session identifier is a member of the SESSIONS data set
   # - the role is a member of the ROLES data set
   # - the session is owned by the user
-  # - the role is an active role of that session. 
+  # - the role is an active role of that session.
 
   def drop_active_role(user,session,role)
     valid_iff(users_include?(user) && sessions_include?(sessions) && roles_include?(role) && user_owns_session?(user,session) && active_roles_include?(role,session))
@@ -282,7 +284,7 @@ class RoleBasedAccessControl
 
 
   # This function returns a Boolean value meaning whether the subject of a given session is
-  # allowed or not to perform a given operation on a given object. 
+  # allowed or not to perform a given operation on a given object.
   #
   # The function is valid if and only if:
   # - the session identifier is a member of the SESSIONS data set
@@ -293,41 +295,41 @@ class RoleBasedAccessControl
   # that permission is assigned to (at least) one of the session’s active roles.
   #
   # An implementation might use the groups that correspond to the subject’s active roles and
-  # their permissions as registered in the object’s access control list. 
+  # their permissions as registered in the object’s access control list.
 
-  def check_access(session,operation,object) #=> boolean 
+  def check_access(session,operation,object) #=> boolean
     valid_iff(sessions_include?(session) && operations_include?(operation) && objects_include?(object))
   end
 
 
-  # This function returns the set of users assigned to a given role. 
+  # This function returns the set of users assigned to a given role.
   #
   # The function is valid if and only if:
-  # - the role is a member of the ROLES data set 
+  # - the role is a member of the ROLES data set
 
   def assigned_users(role) #=> users
-    valid_iff(roles_include?(role)) 
+    valid_iff(roles_include?(role))
   end
 
 
-  # This function returns the set of roles assigned to a given user. 
+  # This function returns the set of roles assigned to a given user.
   #
   # The function is valid if and only if:
   # - the user is a member of the USERS data set
-  
+
   def assigned_roles(user) #=> roles
-    valid_iff(users_include?(user)) 
+    valid_iff(users_include?(user))
   end
 
 
-  # This function returns the set of all permissions (op, obj), 
+  # This function returns the set of all permissions (op, obj),
   # granted to or inherited by a given role.
   #
   # The function is valid if and only if:
   # - the role is a member of the ROLES data set
 
   def role_permissions(role) #=> permissions
-    valid_iff(roles_include?(role)) 
+    valid_iff(roles_include?(role))
   end
 
 
@@ -337,7 +339,7 @@ class RoleBasedAccessControl
   # - the user is a member of the USERS data set.
 
   def user_permissions(user) #=> permissions
-    valid_iff(users_include?(user)) 
+    valid_iff(users_include?(user))
   end
 
 
@@ -347,7 +349,7 @@ class RoleBasedAccessControl
   # - the session identifier is a member of the SESSIONS data set
 
   def session_roles(session) #=> roles
-    valid_iff(sessions_include?(session)) 
+    valid_iff(sessions_include?(session))
   end
 
 
@@ -358,19 +360,19 @@ class RoleBasedAccessControl
   # - the session identifier is a member of the SESSIONS data set
 
   def session_permissions(session) #=> permissions
-    valid_iff(sessions_include?(session)) 
+    valid_iff(sessions_include?(session))
   end
 
 
-  # This function returns the set of operations a given role is permitted to perform on a given object. 
-  # The set contains all operations granted directly to that role or inherited by that role from other roles. 
+  # This function returns the set of operations a given role is permitted to perform on a given object.
+  # The set contains all operations granted directly to that role or inherited by that role from other roles.
   #
   # The function is valid only if:
   # - the role is a member of the ROLES data set
   # - the object is a member of the OBJS data set
 
   def role_operations_on_object(role,object) #=> operations
-    valid_iff(roles_include?(role) && objects_include?(object)) 
+    valid_iff(roles_include?(role) && objects_include?(object))
   end
 
 
@@ -382,7 +384,7 @@ class RoleBasedAccessControl
   # - the object is a member of the OBJS data set
 
   def user_operations_on_object(user,object) #=> operations
-    valid_iff(users_include?(user) && objects_include?(object)) 
+    valid_iff(users_include?(user) && objects_include?(object))
   end
 
 
@@ -401,7 +403,7 @@ class RoleBasedAccessControl
   # 6.3 Static Separation of Duty (SSD)
   #
   # The static separation of duty property, as defined in the model,
-  # uses a collection SSD of pairs of a role set and an associated 
+  # uses a collection SSD of pairs of a role set and an associated
   # cardinality. This section defines the new data type SSD, which
   # in an implementation could be the set of names used to identify
   # the pairs in the collection.
@@ -415,9 +417,9 @@ class RoleBasedAccessControl
   #
   # 6.4 Dynamic Separation of Duty (SSD)
   #
-  # The dynamic separation of duty property, as defined in the model, 
+  # The dynamic separation of duty property, as defined in the model,
   # uses a collection DSD of pairs of a role set and an associated
-  # cardinality. This section defines the new data type DSD, which 
+  # cardinality. This section defines the new data type DSD, which
   # in an implementation could be the set of names used to identify
   # the pairs in the collection.
   #
@@ -435,7 +437,7 @@ class RoleBasedAccessControl
   ##########################################################################
 
 
-  public 
+  public
 
   class RoleBasedAccessControlInvalidArgumentError < ArgumentError
   end
@@ -484,7 +486,7 @@ class RoleBasedAccessControl
   #
   # Required for implementations.
 
-  def users_include?(user) 
+  def users_include?(user)
   end
 
 
@@ -510,7 +512,7 @@ class RoleBasedAccessControl
 
   def roles_include?(role)
   end
-  
+
 
   # Return the PERMISSIONS data set.
   #
@@ -518,7 +520,7 @@ class RoleBasedAccessControl
 
   def permissions() #=> permissions
   end
-  
+
 
   # Set the PERMISSIONS data set.
   #
@@ -549,7 +551,7 @@ class RoleBasedAccessControl
 
   def sessions=(sessions)
   end
-  
+
 
   # Return true iff the session is a member of the SESSIONS data set.
   #
@@ -567,7 +569,7 @@ class RoleBasedAccessControl
   end
 
 
-  # Return true iff the role is an active role of the session. 
+  # Return true iff the role is an active role of the session.
   #
   # Required for implementations.
 
@@ -595,11 +597,11 @@ class RoleBasedAccessControl
   #
   # Required for implementations.
 
-  def user_role_assignments_include?(user,role) 
+  def user_role_assignments_include?(user,role)
   end
 
 
-  # Return true iff the active role set is a subset of the roles assigned to that user. 
+  # Return true iff the active role set is a subset of the roles assigned to that user.
   #
   # Required for implementations.
 
