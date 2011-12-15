@@ -1,7 +1,6 @@
+SixArm.com » Ruby » Role Based Access Control (RBAC)
 
-= SixArm Ruby Gem: Role Based Access Control
-
-Author:: Joel Parker Henderson, joelparkerhenderson@gmail.com
+Author:: Joel Parker Henderson, joel@joelparkerhenderson.com
 Copyright:: Copyright the original author; I merely made it into a gem.
 License:: CreativeCommons License, Non-commercial Share Alike
 License:: LGPL, GNU Lesser General Public License
