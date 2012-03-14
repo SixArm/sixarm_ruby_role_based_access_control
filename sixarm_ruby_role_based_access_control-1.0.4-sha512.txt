@@ -1,0 +1,1 @@
+ac86c9a701d8e8bc01f0c8ded8765ebefc289aa569f070cd5286ab449c562bea48421f714cb94682edfb39eba09b9a8e2f04f8de91684a7533bcc6adcab9408f  sixarm_ruby_role_based_access_control-1.0.4.gem
