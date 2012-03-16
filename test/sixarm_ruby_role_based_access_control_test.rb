@@ -1,6 +1,6 @@
 require 'simplecov'
 SimpleCov.start
-require 'test/unit'
+require 'minitest/autorun'
 require 'sixarm_ruby_role_based_access_control'
 
 class RoleBasedAccessControlTest < Test::Unit::TestCase
