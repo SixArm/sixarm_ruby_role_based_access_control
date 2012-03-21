@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
 
   s.name              = "sixarm_ruby_role_based_access_control"
-  s.summary           = "SixArm Ruby Gem: Role Based Access Control (RBAC) authorization using ANSI INCITS 359-2004 standard"
+  s.summary           = "SixArm.com » Ruby » Role Based Access Control (RBAC) authorization using ANSI INCITS 359-2004 standard"
   s.version           = "1.0.4"
   s.author            = "SixArm"
   s.email             = "sixarm@sixarm.com"
