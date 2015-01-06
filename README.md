@@ -44,7 +44,7 @@ To enable high security for all our gems:
 
 To install with high security:
 
-    gem install sixarm_ruby_role_based_access_control --test --trust-policy HighSecurity
+    gem install sixarm_ruby_role_based_access_control --trust-policy HighSecurity
 
 
 ## What is Core RBAC?
