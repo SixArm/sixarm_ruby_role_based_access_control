@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-require 'minitest/autorun'
-require 'simplecov'
+require "minitest/autorun"
+require "simplecov"
 SimpleCov.start
-require 'sixarm_ruby_role_based_access_control'
+require "sixarm_ruby_role_based_access_control"
 
 class RoleBasedAccessControlTest < Test::Unit::TestCase
 
