@@ -1,2140 +1,1688 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Class: RoleBasedAccessControl
+  
+    &mdash; Documentation by YARD 0.9.19
+  
+</title>
 
-	<title>Class: RoleBasedAccessControl</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
 
-	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
 
-	<script src="./js/jquery.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="./js/thickbox-compressed.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="./js/quicksearch.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="./js/darkfish.js" type="text/javascript"
-		charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  pathId = "RoleBasedAccessControl";
+  relpath = '';
+</script>
 
-</head>
-<body class="class">
 
-	<div id="metadata">
-		<div id="file-metadata">
-			<div id="file-list-section" class="section">
-				<h3 class="section-header">In Files</h3>
-				<div class="section-body">
-					<ul>
-					
-						<li><a href="./lib/sixarm_ruby_role_based_access_control_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/sixarm_ruby_role_based_access_control.rb">lib/sixarm_ruby_role_based_access_control.rb</a></li>
-					
-					</ul>
-				</div>
-			</div>
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
 
-			
-		</div>
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
-		<div id="class-metadata">
 
-			<!-- Parent Class -->
-			
-			<div id="parent-class-section" class="section">
-				<h3 class="section-header">Parent</h3>
-				
-				<p class="link">Object</p>
-				
-			</div>
-			
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
 
-			<!-- Namespace Contents -->
-			
-			<div id="namespace-list-section" class="section">
-				<h3 class="section-header">Namespace</h3>
-				<ul class="link-list">
-					
-					<li><span class="type">CLASS</span> <a href="RoleBasedAccessControl/RoleBasedAccessControlInvalidArgumentError.html">RoleBasedAccessControl::RoleBasedAccessControlInvalidArgumentError</a></li>
-					
-				</ul>
-			</div>
-			
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (R)</a> &raquo;
+    
+    
+    <span class="title">RoleBasedAccessControl</span>
+  
+</div>
 
-			<!-- Method Quickref -->
-			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#M000079">#active_role_set_is_subset_of_roles_assigned_to_user?</a></li>
-					
-					<li><a href="#M000074">#active_roles</a></li>
-					
-					<li><a href="#M000075">#active_roles_include?</a></li>
-					
-					<li><a href="#M000013">#add_active_role</a></li>
-					
-					<li><a href="#M000005">#add_role</a></li>
-					
-					<li><a href="#M000001">#add_user</a></li>
-					
-					<li><a href="#M000007">#assign_user</a></li>
-					
-					<li><a href="#M000017">#assigned_roles</a></li>
-					
-					<li><a href="#M000016">#assigned_users</a></li>
-					
-					<li><a href="#M000015">#check_access</a></li>
-					
-					<li><a href="#M000011">#create_session</a></li>
-					
-					<li><a href="#M000008">#deassign_user</a></li>
-					
-					<li><a href="#M000006">#delete_role</a></li>
-					
-					<li><a href="#M000012">#delete_session</a></li>
-					
-					<li><a href="#M000004">#delete_user</a></li>
-					
-					<li><a href="#M000014">#drop_active_role</a></li>
-					
-					<li><a href="#M000009">#grant_permission</a></li>
-					
-					<li><a href="#M000068">#permissions</a></li>
-					
-					<li><a href="#M000069">#permissions=</a></li>
-					
-					<li><a href="#M000070">#permissions_include?</a></li>
-					
-					<li><a href="#M000010">#revoke_permission</a></li>
-					
-					<li><a href="#M000022">#role_operations_on_object</a></li>
-					
-					<li><a href="#M000018">#role_permissions</a></li>
-					
-					<li><a href="#M000065">#roles</a></li>
-					
-					<li><a href="#M000066">#roles=</a></li>
-					
-					<li><a href="#M000067">#roles_include?</a></li>
-					
-					<li><a href="#M000021">#session_permissions</a></li>
-					
-					<li><a href="#M000020">#session_roles</a></li>
-					
-					<li><a href="#M000071">#sessions</a></li>
-					
-					<li><a href="#M000072">#sessions=</a></li>
-					
-					<li><a href="#M000073">#sessions_include?</a></li>
-					
-					<li><a href="#M000023">#user_operations_on_object</a></li>
-					
-					<li><a href="#M000080">#user_owns_session?</a></li>
-					
-					<li><a href="#M000019">#user_permissions</a></li>
-					
-					<li><a href="#M000076">#user_role_assignments</a></li>
-					
-					<li><a href="#M000077">#user_role_assignments=</a></li>
-					
-					<li><a href="#M000078">#user_role_assignments_include?</a></li>
-					
-					<li><a href="#M000062">#users</a></li>
-					
-					<li><a href="#M000063">#users=</a></li>
-					
-					<li><a href="#M000064">#users_include?</a></li>
-					
-					<li><a href="#M000025">#valid_iff</a></li>
-					
-					<li><a href="#M000024">#valid_only_if</a></li>
-					
-				</ul>
-			</div>
-			
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
 
-			<!-- Included Modules -->
-			
-		</div>
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
 
-		<div id="project-metadata">
-			
-			
-			<div id="fileindex-section" class="section project-section">
-				<h3 class="section-header">Files</h3>
-				<ul>
-				
-					<li class="file"><a href="./LICENSE_txt.html">LICENSE.txt</a></li>
-				
-					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
-				
-					<li class="file"><a href="./sixarm_ruby_role_based_access_control_gemspec.html">sixarm_ruby_role_based_access_control.gemspec</a></li>
-				
-					<li class="file"><a href="./sixarm_ruby_role_based_access_control_sha512_txt.html">sixarm_ruby_role_based_access_control.sha512.txt</a></li>
-				
-				</ul>
-			</div>
-			
+      <div id="content"><h1>Class: RoleBasedAccessControl
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+  <dl>
+    <dt>Inherits:</dt>
+    <dd>
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">RoleBasedAccessControl</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+    </dd>
+  </dl>
+  
 
-			<div id="classindex-section" class="section project-section">
-				<h3 class="section-header">Class Index
-					<span class="search-toggle"><img src="./images/find.png"
-						height="16" width="16" alt="[+]"
-						title="show/hide quicksearch" /></span></h3>
-				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-				<fieldset>
-					<legend>Quicksearch</legend>
-					<input type="text" name="quicksearch" value=""
-						class="quicksearch-field" />
-				</fieldset>
-				</form>
+  
+  
+  
+  
+  
 
-				<ul class="link-list">
-				
-					<li><a href="./RoleBasedAccessControl.html">RoleBasedAccessControl</a></li>
-				
-					<li><a href="./RoleBasedAccessControl/RoleBasedAccessControlInvalidArgumentError.html">RoleBasedAccessControl::RoleBasedAccessControlInvalidArgumentError</a></li>
-				
-					<li><a href="./RoleBasedAccessControlTest.html">RoleBasedAccessControlTest</a></li>
-				
-				</ul>
-				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
-			</div>
+  
 
-			
-		</div>
-	</div>
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>lib/sixarm_ruby_role_based_access_control.rb</dd>
+  </dl>
+  
+</div>
 
-	<div id="documentation">
-		<h1 class="class">RoleBasedAccessControl</h1>
+<h2>Defined Under Namespace</h2>
+<p class="children">
+  
+    
+  
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="RoleBasedAccessControl/RoleBasedAccessControlInvalidArgumentError.html" title="RoleBasedAccessControl::RoleBasedAccessControlInvalidArgumentError (class)">RoleBasedAccessControlInvalidArgumentError</a></span>
+    
+  
+</p>
 
-		<div id="description">
-			<h1>SixArm Ruby Gem: Role Based Access Control</h1>
-<table>
-<tr><td valign="top">Author:</td><td>Joel Parker Henderson, joelparkerhenderson@gmail.com
 
-</td></tr>
-<tr><td valign="top">Copyright:</td><td>Copyright the original author; I merely made it into a gem.
 
-</td></tr>
-<tr><td valign="top">License:</td><td>CreativeCommons License, Non-commercial Share Alike
 
-</td></tr>
-<tr><td valign="top">License:</td><td>LGPL, GNU Lesser General Public License
 
-</td></tr>
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_active_role-instance_method" title="#add_active_role (instance method)">#<strong>add_active_role</strong>(user, session, role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function adds a role as an active role of a session whose owner is a given user.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_role-instance_method" title="#add_role (instance method)">#<strong>add_role</strong>(role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This command creates a new role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#add_user-instance_method" title="#add_user (instance method)">#<strong>add_user</strong>(user)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This command creates a new RBAC user.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assign_user-instance_method" title="#assign_user (instance method)">#<strong>assign_user</strong>(user, role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This command assigns a user to a role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assigned_roles-instance_method" title="#assigned_roles (instance method)">#<strong>assigned_roles</strong>(user)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the set of roles assigned to a given user.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#assigned_users-instance_method" title="#assigned_users (instance method)">#<strong>assigned_users</strong>(role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the set of users assigned to a given role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#check_access-instance_method" title="#check_access (instance method)">#<strong>check_access</strong>(session, operation, object)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns a Boolean value meaning whether the subject of a given session is allowed or not to perform a given operation on a given object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#create_session-instance_method" title="#create_session (instance method)">#<strong>create_session</strong>(user, session)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function creates a new session with a given user as owner and an active role set.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#deassign_user-instance_method" title="#deassign_user (instance method)">#<strong>deassign_user</strong>(user, role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This command deletes the assignment of the user user to the role role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_role-instance_method" title="#delete_role (instance method)">#<strong>delete_role</strong>(role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This command deletes an existing role from the RBAC database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_session-instance_method" title="#delete_session (instance method)">#<strong>delete_session</strong>(user, session)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function deletes a given session with a given owner user.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete_user-instance_method" title="#delete_user (instance method)">#<strong>delete_user</strong>(user)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This command deletes an existing user from the RBAC database.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#drop_active_role-instance_method" title="#drop_active_role (instance method)">#<strong>drop_active_role</strong>(user, session, role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function deletes a role from the active role set of a session owned by a given user.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#grant_permission-instance_method" title="#grant_permission (instance method)">#<strong>grant_permission</strong>(object, operation, role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This command grants a role the permission to perform an operation on an object to a role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#revoke_permission-instance_method" title="#revoke_permission (instance method)">#<strong>revoke_permission</strong>(object, operation, role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This command revokes the permission to perform an operation on an object from the set of permissions assigned to a role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#role_operations_on_object-instance_method" title="#role_operations_on_object (instance method)">#<strong>role_operations_on_object</strong>(role, object)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the set of operations a given role is permitted to perform on a given object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#role_permissions-instance_method" title="#role_permissions (instance method)">#<strong>role_permissions</strong>(role)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the set of all permissions (op, obj), granted to or inherited by a given role.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#session_permissions-instance_method" title="#session_permissions (instance method)">#<strong>session_permissions</strong>(session)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the permissions of the session session, i.e., the permissions assigned to its active roles.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#session_roles-instance_method" title="#session_roles (instance method)">#<strong>session_roles</strong>(session)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the active roles associated with a session.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#user_operations_on_object-instance_method" title="#user_operations_on_object (instance method)">#<strong>user_operations_on_object</strong>(user, object)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the set of operations a given user is permitted to perform on a given object.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#user_permissions-instance_method" title="#user_permissions (instance method)">#<strong>user_permissions</strong>(user)  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>This function returns the permissions a given user gets through his/her authorized roles.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="add_active_role-instance_method">
+  
+    #<strong>add_active_role</strong>(user, session, role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function adds a role as an active role of a session whose owner is a given user.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the USERS data set</p>
+</li><li>
+<p>the session identifier is a member of the SESSIONS data set</p>
+</li><li>
+<p>the role is a member of the ROLES data set</p>
+</li><li>
+<p>the role is assigned to the user</p>
+</li><li>
+<p>the session is owned by that user</p>
+</li></ul>
+
+<p>In an implementation, the new active role might be a group that corresponds to that role.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+174
+175
+176</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 174</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_active_role'>add_active_role</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_session'>session</span><span class='comma'>,</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_sessions_include?'>sessions_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_sessions'>sessions</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_user_role_assignments_include?'>user_role_assignments_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_user_owns_session?'>user_owns_session?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
 </table>
-<p>
-Ruby interface for the Role Based Access Control (RBAC) specification:
-</p>
-<ul>
-<li>ANSI INCITS 359-2004
-
-</li>
-<li>American National Standards Institute, Inc.
-
-</li>
-<li>February 3, 2004
-
-</li>
-</ul>
-<h1>What is Core RBAC?</h1>
-<p>
-Core RBAC includes sets of five basic data elements called users (USERS),
-roles (ROLES), objects (OBS), operations (OPS), and permissions (PRMS).
-</p>
-<h2>RBAC model</h2>
-<p>
-The RBAC model as a whole is fundamentally defined in terms of individual
-users being assigned to roles and permissions being assigned to roles. A
-role is a means for naming many-to-many relationships among individual
-users and permissions. In addition, the core RBAC model includes a set of
-sessions (SESSIONS) where each session is a mapping between a user and an
-activated subset of roles that are assigned to the user.
-</p>
-<h2>Users</h2>
-<p>
-A user is defined as a human being. Although the concept of a user can be
-extended to include machines, networks, or intelligent autonomous agents,
-the definition is limited to a person in this document for simplicity
-reasons.
-</p>
-<h2>Roles</h2>
-<p>
-A role is a job function within the context of an organization with some
-associated semantics regarding the authority and responsibility conferred
-on the user assigned to the role.
-</p>
-<h2>Permissions</h2>
-<p>
-Permission is an approval to perform an operation on one or more RBAC
-protected objects.
-</p>
-<h2>Operations</h2>
-<p>
-An operation is an executable image of a program, which upon invocation
-executes some function for the user. The types of operations and objects
-that RBAC controls are dependent on the type of system in which it will be
-implemented. For example, within a file system, operations might include
-read, write, and execute; within a database management system, operations
-might include insert, delete, append and update.
-</p>
-<h1>Details</h1>
-<p>
-The purpose of any access control mechanism is to protect system resources
-(i.e., protected objects). Consistent with earlier models of access control
-an object is an entity that contains or receives information.
-</p>
-<h2>System Implementations</h2>
-<p>
-For a system that implements RBAC, the objects can represent information
-containers (e.g., files, directories, in an operating system, and/or
-columns, rows, tables, and views within a database management system) or
-objects can represent exhaustible system resources, such as printers, disk
-space, and CPU cycles.
-</p>
-<p>
-The set of objects covered by RBAC includes all of the objects listed in
-the permissions that are assigned to roles.
-</p>
-<h2>For More Information</h2>
-<p>
-Please see the complete ANSI 359-2004 pdf document.
-</p>
-<p>
-<a
-href="http://www.list.gmu.edu/journals/tissec/ANSI+INCITS+359-2004.pdf">www.list.gmu.edu/journals/tissec/ANSI+INCITS+359-2004.pdf</a>
-</p>
-<h2>Roadmap</h2>
-<p>
-Possible future upgrades:
-</p>
-<ul>
-<li>6.2 Hierarchical RBAC
-
-</li>
-<li>6.3 Static Separation of Duty (SSD) Relations.
-
-</li>
-<li>6.4 Dynamic Separation of Duty (SSD) Relations.
-
-</li>
-</ul>
-
-		</div>
-
-		<!-- Constants -->
-		
-
-		<!-- Attributes -->
-		
-
-		<!-- Methods -->
-		
-		<div id="public-instance-method-details" class="method-section section">
-			<h3 class="section-header">Public Instance Methods</h3>
-
-		
-			<div id="add-active-role-method" class="method-detail ">
-				<a name="M000013"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">add_active_role</span><span
-						class="method-args">(user,session,role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function adds a role as an active role of a session whose owner is a
-given user.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the USERS data set
-
-</li>
-<li>the session identifier is a member of the SESSIONS data set
-
-</li>
-<li>the role is a member of the ROLES data set
-
-</li>
-<li>the role is assigned to the user
-
-</li>
-<li>the session is owned by that user
-
-</li>
-</ul>
-<p>
-In an implementation, the new active role might be a group that corresponds
-to that role.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="add-active-role-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 265</span>
-265:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_active_role</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">session</span>,<span class="ruby-identifier">role</span>)
-266:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">sessions_include?</span>(<span class="ruby-identifier">sessions</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">user_role_assignments_include?</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">role</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">user_owns_session?</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">session</span>))
-267:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="add-role-method" class="method-detail ">
-				<a name="M000005"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">add_role</span><span
-						class="method-args">(role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This command creates a new role.
-</p>
-<p>
-The command is valid if and only if:
-</p>
-<ul>
-<li>the new role is not already a member of the /ROLES/ data set.
-
-</li>
-</ul>
-<p>
-The /ROLES/ data set and the functions /assigned_users/ and
-/assigned_permissions/ are updated.
-</p>
-<p>
-Initially, no user or permission is assigned to the new role.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="add-role-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 150</span>
-150:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_role</span>(<span class="ruby-identifier">role</span>)
-151:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>))
-152:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="add-user-method" class="method-detail ">
-				<a name="M000001"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">add_user</span><span
-						class="method-args">(user)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This command creates a new RBAC user.
-</p>
-<p>
-The command is valid only if:
-</p>
-<ul>
-<li>the new user is not already a member of the /USERS/ data set.
-
-</li>
-</ul>
-<p>
-The /USER/ data set is updated.
-</p>
-<p>
-The new user does not own any session at the time of its creation.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="add-user-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 120</span>
-120:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_user</span>(<span class="ruby-identifier">user</span>)
-121:     <span class="ruby-identifier">valid_only_if</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>))
-122:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="assign-user-method" class="method-detail ">
-				<a name="M000007"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">assign_user</span><span
-						class="method-args">(user,role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This command assigns a user to a role.
-</p>
-<p>
-The command is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the /USERS/ data set
-
-</li>
-<li>the role is a member of the /ROLES/ data set
-
-</li>
-<li>the user is not already assigned to the role
-
-</li>
-</ul>
-<p>
-The data set UA and the function <a
-href="RoleBasedAccessControl.html#M000016">assigned_users</a> are updated
-to reflect the assignment.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="assign-user-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 179</span>
-179:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">assign_user</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">role</span>)
-180:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>))
-181:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="assigned-roles-method" class="method-detail ">
-				<a name="M000017"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">assigned_roles</span><span
-						class="method-args">(user)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns the set of roles assigned to a given user.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the USERS data set
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="assigned-roles-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 318</span>
-318:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">assigned_roles</span>(<span class="ruby-identifier">user</span>) <span class="ruby-comment cmt">#=&gt; roles</span>
-319:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>)) 
-320:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="assigned-users-method" class="method-detail ">
-				<a name="M000016"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">assigned_users</span><span
-						class="method-args">(role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns the set of users assigned to a given role.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the role is a member of the ROLES data set
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="assigned-users-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 308</span>
-308:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">assigned_users</span>(<span class="ruby-identifier">role</span>) <span class="ruby-comment cmt">#=&gt; users</span>
-309:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>)) 
-310:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="check-access-method" class="method-detail ">
-				<a name="M000015"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">check_access</span><span
-						class="method-args">(session,operation,object)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns a Boolean value meaning whether the subject of a
-given session is allowed or not to perform a given operation on a given
-object.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the session identifier is a member of the SESSIONS data set
-
-</li>
-<li>the operation is a member of the OPS data set
-
-</li>
-<li>the object is a member of the OBJS data set
-
-</li>
-</ul>
-<p>
-The session’s subject has the permission to perform the operation on that
-object if and only if that permission is assigned to (at least) one of the
-session’s active roles.
-</p>
-<p>
-An implementation might use the groups that correspond to the subject’s
-active roles and their permissions as registered in the object’s access
-control list.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="check-access-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 298</span>
-298:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check_access</span>(<span class="ruby-identifier">session</span>,<span class="ruby-identifier">operation</span>,<span class="ruby-identifier">object</span>) <span class="ruby-comment cmt">#=&gt; boolean </span>
-299:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">sessions_include?</span>(<span class="ruby-identifier">session</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">operations_include?</span>(<span class="ruby-identifier">operation</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">objects_include?</span>(<span class="ruby-identifier">object</span>))
-300:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="create-session-method" class="method-detail ">
-				<a name="M000011"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">create_session</span><span
-						class="method-args">(user,session)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function creates a new session with a given user as owner and an
-active role set.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the USERS data set, and
-
-</li>
-<li>the active role set is a subset of the roles assigned to that user.
-
-</li>
-</ul>
-<p>
-In a RBAC implementation, the session’s active roles might actually be
-the groups that represent those roles.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="create-session-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 237</span>
-237:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_session</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">session</span>)
-238:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">active_role_set_is_subset_of_roles_assigned_to_user</span>(<span class="ruby-identifier">user</span>))
-239:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="deassign-user-method" class="method-detail ">
-				<a name="M000008"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">deassign_user</span><span
-						class="method-args">(user,role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This command deletes the assignment of the user user to the role role.
-</p>
-<p>
-The command is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the USERS data set
-
-</li>
-<li>the role is a member of the ROLES data set
-
-</li>
-<li>and the user is assigned to the role
-
-</li>
-</ul>
-<p>
-It is an implementation decision how to proceed with the sessions in which
-the session user is user and one of his/her active roles is role. The RBAC
-system could wait for such a session to terminate normally, could force its
-termination, or could inactivate the role.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="deassign-user-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 195</span>
-195:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">deassign_user</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">role</span>)
-196:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">user_role_assignments_include?</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">role</span>))
-197:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="delete-role-method" class="method-detail ">
-				<a name="M000006"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">delete_role</span><span
-						class="method-args">(role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This command deletes an existing role from the RBAC database.
-</p>
-<p>
-The command is valid if and only if
-</p>
-<ul>
-<li>the role to be deleted is a member of the /ROLES/ data set.
-
-</li>
-</ul>
-<p>
-It is an implementation decision how to proceed with the sessions in which
-the role to be deleted is active. The RBAC system could wait for such a
-session to terminate normally, it could force the termination of that
-session, or it could delete the role from that session while allowing the
-session to continue.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="delete-role-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 165</span>
-165:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_role</span>(<span class="ruby-identifier">role</span>)
-166:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>))
-167:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="delete-session-method" class="method-detail ">
-				<a name="M000012"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">delete_session</span><span
-						class="method-args">(user,session)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function deletes a given session with a given owner user.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the USERS data set
-
-</li>
-<li>the session identifier is a member of the SESSIONS data set
-
-</li>
-<li>the session is owned by the given user
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="delete-session-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 249</span>
-249:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_session</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">session</span>)
-250:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">sessions_include?</span>(<span class="ruby-identifier">session</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">user_owns_session?</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">session</span>))
-251:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="delete-user-method" class="method-detail ">
-				<a name="M000004"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">delete_user</span><span
-						class="method-args">(user)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This command deletes an existing user from the RBAC database.
-</p>
-<p>
-The command is valid if and only if:
-</p>
-<ul>
-<li>the user to be deleted is a member of the /USERS/ data set.
-
-</li>
-</ul>
-<p>
-The /USERS/ and /UA/ data sets and the /assigned_users/ function are
-updated.
-</p>
-<p>
-It is an implementation decision how to proceed with the sessions owned by
-the user to be deleted. The RBAC system could wait for such a session to
-terminate normally, or it could force its termination.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="delete-user-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 136</span>
-136:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_user</span>(<span class="ruby-identifier">user</span>) 
-137:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>))
-138:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="drop-active-role-method" class="method-detail ">
-				<a name="M000014"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">drop_active_role</span><span
-						class="method-args">(user,session,role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function deletes a role from the active role set of a session owned by
-a given user.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the USERS data set
-
-</li>
-<li>the session identifier is a member of the SESSIONS data set
-
-</li>
-<li>the role is a member of the ROLES data set
-
-</li>
-<li>the session is owned by the user
-
-</li>
-<li>the role is an active role of that session.
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="drop-active-role-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 279</span>
-279:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">drop_active_role</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">session</span>,<span class="ruby-identifier">role</span>)
-280:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">sessions_include?</span>(<span class="ruby-identifier">sessions</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">user_owns_session?</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">session</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">active_roles_include?</span>(<span class="ruby-identifier">role</span>,<span class="ruby-identifier">session</span>))
-281:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="grant-permission-method" class="method-detail ">
-				<a name="M000009"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">grant_permission</span><span
-						class="method-args">(object,operation,role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This command grants a role the permission to perform an operation on an
-object to a role.
-</p>
-<p>
-The command may be implemented as granting permissions to a group
-corresponding to that role, i.e., setting the access control list of the
-object involved.
-</p>
-<p>
-The command is valid if and only if:
-</p>
-<ul>
-<li>the pair (operation, object) represents a permission
-
-</li>
-<li>the role is a member of the ROLES data set.
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="grant-permission-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 209</span>
-209:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">grant_permission</span>(<span class="ruby-identifier">object</span>,<span class="ruby-identifier">operation</span>,<span class="ruby-identifier">role</span>)
-210:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">permissions_include?</span>(<span class="ruby-identifier">operation</span>,<span class="ruby-identifier">object</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>))
-211:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="revoke-permission-method" class="method-detail ">
-				<a name="M000010"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">revoke_permission</span><span
-						class="method-args">(object,operation,role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This command revokes the permission to perform an operation on an object
-from the set of permissions assigned to a role. The command may be
-implemented as revoking permissions from a group corresponding to that
-role, i.e., setting the access control list of the object involved.
-</p>
-<p>
-The command is valid if and only if:
-</p>
-<ul>
-<li>the pair (operation, object) represents a permission
-
-</li>
-<li>the role is a member of the ROLES data set.
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="revoke-permission-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 223</span>
-223:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">revoke_permission</span>(<span class="ruby-identifier">object</span>,<span class="ruby-identifier">operation</span>,<span class="ruby-identifier">role</span>)
-224:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">permissions_include?</span>([<span class="ruby-identifier">object</span>,<span class="ruby-identifier">operation</span>]) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>))
-225:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="role-operations-on-object-method" class="method-detail ">
-				<a name="M000022"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">role_operations_on_object</span><span
-						class="method-args">(role,object)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns the set of operations a given role is permitted to
-perform on a given object. The set contains all operations granted directly
-to that role or inherited by that role from other roles.
-</p>
-<p>
-The function is valid only if:
-</p>
-<ul>
-<li>the role is a member of the ROLES data set
-
-</li>
-<li>the object is a member of the OBJS data set
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="role-operations-on-object-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 372</span>
-372:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">role_operations_on_object</span>(<span class="ruby-identifier">role</span>,<span class="ruby-identifier">object</span>) <span class="ruby-comment cmt">#=&gt; operations</span>
-373:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">objects_include?</span>(<span class="ruby-identifier">object</span>)) 
-374:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="role-permissions-method" class="method-detail ">
-				<a name="M000018"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">role_permissions</span><span
-						class="method-args">(role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns the set of all permissions (op, obj), granted to or
-inherited by a given role.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the role is a member of the ROLES data set
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="role-permissions-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 329</span>
-329:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">role_permissions</span>(<span class="ruby-identifier">role</span>) <span class="ruby-comment cmt">#=&gt; permissions</span>
-330:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>)) 
-331:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="session-permissions-method" class="method-detail ">
-				<a name="M000021"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">session_permissions</span><span
-						class="method-args">(session)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns the permissions of the session session, i.e., the
-permissions assigned to its active roles.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the session identifier is a member of the SESSIONS data set
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="session-permissions-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 360</span>
-360:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">session_permissions</span>(<span class="ruby-identifier">session</span>) <span class="ruby-comment cmt">#=&gt; permissions</span>
-361:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">sessions_include?</span>(<span class="ruby-identifier">session</span>)) 
-362:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="session-roles-method" class="method-detail ">
-				<a name="M000020"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">session_roles</span><span
-						class="method-args">(session)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns the active roles associated with a session.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the session identifier is a member of the SESSIONS data set
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="session-roles-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 349</span>
-349:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">session_roles</span>(<span class="ruby-identifier">session</span>) <span class="ruby-comment cmt">#=&gt; roles</span>
-350:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">sessions_include?</span>(<span class="ruby-identifier">session</span>)) 
-351:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="user-operations-on-object-method" class="method-detail ">
-				<a name="M000023"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">user_operations_on_object</span><span
-						class="method-args">(user,object)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns the set of operations a given user is permitted to
-perform on a given object. The set consists of all the operations obtained
-by the user either directly, or through his/her authorized roles.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the USERS data set
-
-</li>
-<li>the object is a member of the OBJS data set
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="user-operations-on-object-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 384</span>
-384:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_operations_on_object</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">object</span>) <span class="ruby-comment cmt">#=&gt; operations</span>
-385:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">objects_include?</span>(<span class="ruby-identifier">object</span>)) 
-386:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="user-permissions-method" class="method-detail ">
-				<a name="M000019"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">user_permissions</span><span
-						class="method-args">(user)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This function returns the permissions a given user gets through his/her
-authorized roles.
-</p>
-<p>
-The function is valid if and only if:
-</p>
-<ul>
-<li>the user is a member of the USERS data set.
-
-</li>
-</ul>
-					
-
-					
-					<div class="method-source-code"
-						id="user-permissions-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 339</span>
-339:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_permissions</span>(<span class="ruby-identifier">user</span>) <span class="ruby-comment cmt">#=&gt; permissions</span>
-340:     <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>)) 
-341:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-		</div>
-	
-		<div id="protected-instance-method-details" class="method-section section">
-			<h3 class="section-header">Protected Instance Methods</h3>
-
-		
-			<div id="active-role-set-is-subset-of-roles-assigned-to-user--method" class="method-detail ">
-				<a name="M000079"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">active_role_set_is_subset_of_roles_assigned_to_user?</span><span
-						class="method-args">(user)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return true iff the active role set is a subset of the roles assigned to
-that user.
-</p>
-<p>
-Required for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="active-role-set-is-subset-of-roles-assigned-to-user--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 606</span>
-606:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">active_role_set_is_subset_of_roles_assigned_to_user?</span>(<span class="ruby-identifier">user</span>)
-607:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="active-roles-method" class="method-detail ">
-				<a name="M000074"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">active_roles</span><span
-						class="method-args">(session)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return the ACTIVE_ROLES data set for the session.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="active-roles-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 566</span>
-566:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">active_roles</span>(<span class="ruby-identifier">session</span>) <span class="ruby-comment cmt">#=&gt; roles</span>
-567:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="active-roles-include--method" class="method-detail ">
-				<a name="M000075"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">active_roles_include?</span><span
-						class="method-args">(role,session)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return true iff the role is an active role of the session.
-</p>
-<p>
-Required for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="active-roles-include--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 574</span>
-574:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">active_roles_include?</span>(<span class="ruby-identifier">role</span>,<span class="ruby-identifier">session</span>)
-575:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="permissions-method" class="method-detail ">
-				<a name="M000068"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">permissions</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return the PERMISSIONS data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="permissions-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 519</span>
-519:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">permissions</span>() <span class="ruby-comment cmt">#=&gt; permissions</span>
-520:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="permissions--method" class="method-detail ">
-				<a name="M000069"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">permissions=</span><span
-						class="method-args">(permissions)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Set the PERMISSIONS data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="permissions--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 527</span>
-527:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">permissions=</span>(<span class="ruby-identifier">permissions</span>)
-528:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="permissions-include--method" class="method-detail ">
-				<a name="M000070"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">permissions_include?</span><span
-						class="method-args">(permission)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return true iff the permission is a member of the PERMISSIONS data set.
-</p>
-<p>
-Required for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="permissions-include--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 535</span>
-535:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">permissions_include?</span>(<span class="ruby-identifier">permission</span>)
-536:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="roles-method" class="method-detail ">
-				<a name="M000065"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">roles</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return the ROLES data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="roles-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 495</span>
-495:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">roles</span>() <span class="ruby-comment cmt">#=&gt; roles</span>
-496:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="roles--method" class="method-detail ">
-				<a name="M000066"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">roles=</span><span
-						class="method-args">(roles)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Set the ROLES data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="roles--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 503</span>
-503:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">roles=</span>(<span class="ruby-identifier">roles</span>)
-504:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="roles-include--method" class="method-detail ">
-				<a name="M000067"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">roles_include?</span><span
-						class="method-args">(role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return true iff the role is a member of the ROLES data set.
-</p>
-<p>
-Required for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="roles-include--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 511</span>
-511:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">roles_include?</span>(<span class="ruby-identifier">role</span>)
-512:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="sessions-method" class="method-detail ">
-				<a name="M000071"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">sessions</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return the SESSIONS data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="sessions-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 543</span>
-543:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sessions</span>() <span class="ruby-comment cmt">#=&gt; sessions</span>
-544:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="sessions--method" class="method-detail ">
-				<a name="M000072"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">sessions=</span><span
-						class="method-args">(sessions)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Set the SESSIONS data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="sessions--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 550</span>
-550:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sessions=</span>(<span class="ruby-identifier">sessions</span>)
-551:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="sessions-include--method" class="method-detail ">
-				<a name="M000073"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">sessions_include?</span><span
-						class="method-args">(session)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return true iff the session is a member of the SESSIONS data set.
-</p>
-<p>
-Required for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="sessions-include--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 558</span>
-558:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">sessions_include?</span>(<span class="ruby-identifier">session</span>)
-559:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="user-owns-session--method" class="method-detail ">
-				<a name="M000080"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">user_owns_session?</span><span
-						class="method-args">(user,session)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return true iff the user owns the session.
-</p>
-<p>
-Required for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="user-owns-session--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 613</span>
-613:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_owns_session?</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">session</span>)
-614:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="user-role-assignments-method" class="method-detail ">
-				<a name="M000076"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">user_role_assignments</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return the set of user role assignments.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="user-role-assignments-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 582</span>
-582:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_role_assignments</span>() <span class="ruby-comment cmt">#=&gt; assignments</span>
-583:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="user-role-assignments--method" class="method-detail ">
-				<a name="M000077"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">user_role_assignments=</span><span
-						class="method-args">(user_role_assignments)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Set the user role assignments data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="user-role-assignments--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 590</span>
-590:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_role_assignments=</span>(<span class="ruby-identifier">user_role_assignments</span>)
-591:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="user-role-assignments-include--method" class="method-detail ">
-				<a name="M000078"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">user_role_assignments_include?</span><span
-						class="method-args">(user,role)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return true iff the user is assigned to the role.
-</p>
-<p>
-Required for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="user-role-assignments-include--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 598</span>
-598:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">user_role_assignments_include?</span>(<span class="ruby-identifier">user</span>,<span class="ruby-identifier">role</span>) 
-599:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="users-method" class="method-detail ">
-				<a name="M000062"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">users</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return the USERS data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="users-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 471</span>
-471:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">users</span>() <span class="ruby-comment cmt">#=&gt; users</span>
-472:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="users--method" class="method-detail ">
-				<a name="M000063"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">users=</span><span
-						class="method-args">(users)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Set the USERS data set.
-</p>
-<p>
-Optional for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="users--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 479</span>
-479:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">users=</span>(<span class="ruby-identifier">users</span>)
-480:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="users-include--method" class="method-detail ">
-				<a name="M000064"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">users_include?</span><span
-						class="method-args">(user)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Return true iff the user is a member of the USERS data set.
-</p>
-<p>
-Required for implementations.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="users-include--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 487</span>
-487:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">users_include?</span>(<span class="ruby-identifier">user</span>) 
-488:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="valid-iff-method" class="method-detail ">
-				<a name="M000025"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">valid_iff</span><span
-						class="method-args">(condition)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p class="missing-docs">(Not documented)</p>
-					
-
-					
-					<div class="method-source-code"
-						id="valid-iff-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 451</span>
-451:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid_iff</span>(<span class="ruby-identifier">condition</span>)
-452:     <span class="ruby-identifier">condition</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span>
-453:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-			<div id="valid-only-if-method" class="method-detail ">
-				<a name="M000024"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">valid_only_if</span><span
-						class="method-args">(condition)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p class="missing-docs">(Not documented)</p>
-					
-
-					
-					<div class="method-source-code"
-						id="valid-only-if-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/sixarm_ruby_role_based_access_control.rb, line 446</span>
-446:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid_only_if</span>(<span class="ruby-identifier">condition</span>)
-447:     <span class="ruby-identifier">condition</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">RoleBasedAccessControlInvalidArgumentError</span>
-448:   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-			</div>
-
-		
-		</div>
-	
-
-	</div>
-
-
-	<div id="rdoc-debugging-section-dump" class="debugging-section">
-	
-		<p>Disabled; run with --debug to generate this.</p>
-	
-	</div>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
-
-</body>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_role-instance_method">
+  
+    #<strong>add_role</strong>(role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This command creates a new role.</p>
+
+<p>The command is valid if and only if:</p>
+<ul><li>
+<p>the new role is not already a member of the /ROLES/ data set.</p>
+</li></ul>
+
+<p>The /ROLES/ data set and the functions /assigned_users/ and /assigned_permissions/ are updated.</p>
+
+<p>Initially, no user or permission is assigned to the new role.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_role'>add_role</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="add_user-instance_method">
+  
+    #<strong>add_user</strong>(user)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This command creates a new RBAC user.</p>
+
+<p>The command is valid only if:</p>
+<ul><li>
+<p>the new user is not already a member of the /USERS/ data set.</p>
+</li></ul>
+
+<p>The /USER/ data set is updated.</p>
+
+<p>The new user does not own any session at the time of its creation.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_add_user'>add_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_only_if'>valid_only_if</span><span class='lparen'>(</span><span class='op'>!</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="assign_user-instance_method">
+  
+    #<strong>assign_user</strong>(user, role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This command assigns a user to a role.</p>
+
+<p>The command is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the /USERS/ data set</p>
+</li><li>
+<p>the role is a member of the /ROLES/ data set</p>
+</li><li>
+<p>the user is not already assigned to the role</p>
+</li></ul>
+
+<p>The data set UA and the function assigned_users are updated to reflect the assignment.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+88
+89
+90</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 88</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_assign_user'>assign_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="assigned_roles-instance_method">
+  
+    #<strong>assigned_roles</strong>(user)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the set of roles assigned to a given user.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the USERS data set</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+227
+228
+229</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 227</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_assigned_roles'>assigned_roles</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='comment'>#=&gt; roles
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="assigned_users-instance_method">
+  
+    #<strong>assigned_users</strong>(role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the set of users assigned to a given role.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the role is a member of the ROLES data set</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+217
+218
+219</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 217</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_assigned_users'>assigned_users</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span> <span class='comment'>#=&gt; users
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="check_access-instance_method">
+  
+    #<strong>check_access</strong>(session, operation, object)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns a Boolean value meaning whether the subject of a given session is allowed or not to perform a given operation on a given object.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the session identifier is a member of the SESSIONS data set</p>
+</li><li>
+<p>the operation is a member of the OPS data set</p>
+</li><li>
+<p>the object is a member of the OBJS data set</p>
+</li></ul>
+
+<p>The session’s subject has the permission to perform the operation on that object if and only if that permission is assigned to (at least) one of the session’s active roles.</p>
+
+<p>An implementation might use the groups that correspond to the subject’s active roles and their permissions as registered in the object’s access control list.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+207
+208
+209</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 207</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_check_access'>check_access</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='comma'>,</span><span class='id identifier rubyid_operation'>operation</span><span class='comma'>,</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span> <span class='comment'>#=&gt; boolean
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_sessions_include?'>sessions_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_operations_include?'>operations_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_operation'>operation</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_objects_include?'>objects_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="create_session-instance_method">
+  
+    #<strong>create_session</strong>(user, session)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function creates a new session with a given user as owner and an active role set.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the USERS data set, and</p>
+</li><li>
+<p>the active role set is a subset of the roles assigned to that user.</p>
+</li></ul>
+
+<p>In a RBAC implementation, the session’s active roles might actually be the groups that represent those roles.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+146
+147
+148</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 146</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_create_session'>create_session</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_active_role_set_is_subset_of_roles_assigned_to_user'>active_role_set_is_subset_of_roles_assigned_to_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="deassign_user-instance_method">
+  
+    #<strong>deassign_user</strong>(user, role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This command deletes the assignment of the user user to the role role.</p>
+
+<p>The command is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the USERS data set</p>
+</li><li>
+<p>the role is a member of the ROLES data set</p>
+</li><li>
+<p>and the user is assigned to the role</p>
+</li></ul>
+
+<p>It is an implementation decision how to proceed with the sessions in which the session user is user and one of his/her active roles is role. The RBAC system could wait for such a session to terminate normally, could force its termination, or could inactivate the role.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 104</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_deassign_user'>deassign_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_user_role_assignments_include?'>user_role_assignments_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_role-instance_method">
+  
+    #<strong>delete_role</strong>(role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This command deletes an existing role from the RBAC database.</p>
+
+<p>The command is valid if and only if</p>
+<ul><li>
+<p>the role to be deleted is a member of the /ROLES/ data set.</p>
+</li></ul>
+
+<p>It is an implementation decision how to proceed with the sessions in which the role to be deleted is active. The RBAC system could wait for such a session to terminate normally, it could force the termination of that session, or it could delete the role from that session while allowing the session to continue.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+74
+75
+76</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 74</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete_role'>delete_role</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_session-instance_method">
+  
+    #<strong>delete_session</strong>(user, session)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function deletes a given session with a given owner user.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the USERS data set</p>
+</li><li>
+<p>the session identifier is a member of the SESSIONS data set</p>
+</li><li>
+<p>the session is owned by the given user</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+158
+159
+160</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 158</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete_session'>delete_session</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_sessions_include?'>sessions_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_user_owns_session?'>user_owns_session?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="delete_user-instance_method">
+  
+    #<strong>delete_user</strong>(user)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This command deletes an existing user from the RBAC database.</p>
+
+<p>The command is valid if and only if:</p>
+<ul><li>
+<p>the user to be deleted is a member of the /USERS/ data set.</p>
+</li></ul>
+
+<p>The /USERS/ and /UA/  data sets and the /assigned_users/ function are updated.</p>
+
+<p>It is an implementation decision how to proceed with the sessions owned by the user to be deleted. The RBAC system could wait for such a session to terminate normally, or it could force its termination.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+45
+46
+47</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 45</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_delete_user'>delete_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="drop_active_role-instance_method">
+  
+    #<strong>drop_active_role</strong>(user, session, role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function deletes a role from the active role set of a session owned by a given user.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the USERS data set</p>
+</li><li>
+<p>the session identifier is a member of the SESSIONS data set</p>
+</li><li>
+<p>the role is a member of the ROLES data set</p>
+</li><li>
+<p>the session is owned by the user</p>
+</li><li>
+<p>the role is an active role of that session.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+188
+189
+190</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 188</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_drop_active_role'>drop_active_role</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_session'>session</span><span class='comma'>,</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_sessions_include?'>sessions_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_sessions'>sessions</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_user_owns_session?'>user_owns_session?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_active_roles_include?'>active_roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='comma'>,</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="grant_permission-instance_method">
+  
+    #<strong>grant_permission</strong>(object, operation, role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This command grants a role the permission to perform an operation on an object to a role.</p>
+
+<p>The command may be implemented as granting permissions to a group corresponding to that role, i.e., setting the access control list of the object involved.</p>
+
+<p>The command is valid if and only if:</p>
+<ul><li>
+<p>the pair (operation, object) represents a permission</p>
+</li><li>
+<p>the role is a member of the ROLES data set.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+118
+119
+120</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 118</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_grant_permission'>grant_permission</span><span class='lparen'>(</span><span class='id identifier rubyid_object'>object</span><span class='comma'>,</span><span class='id identifier rubyid_operation'>operation</span><span class='comma'>,</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_permissions_include?'>permissions_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_operation'>operation</span><span class='comma'>,</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="revoke_permission-instance_method">
+  
+    #<strong>revoke_permission</strong>(object, operation, role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This command revokes the permission to perform an operation on an object from the set of permissions assigned to a role. The command may be implemented as revoking permissions from a group corresponding to that role, i.e., setting the access control list of the object involved.</p>
+
+<p>The command is valid if and only if:</p>
+<ul><li>
+<p>the pair (operation, object) represents a permission</p>
+</li><li>
+<p>the role is a member of the ROLES data set.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_revoke_permission'>revoke_permission</span><span class='lparen'>(</span><span class='id identifier rubyid_object'>object</span><span class='comma'>,</span><span class='id identifier rubyid_operation'>operation</span><span class='comma'>,</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_permissions_include?'>permissions_include?</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_object'>object</span><span class='comma'>,</span><span class='id identifier rubyid_operation'>operation</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="role_operations_on_object-instance_method">
+  
+    #<strong>role_operations_on_object</strong>(role, object)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the set of operations a given role is permitted to perform on a given object. The set contains all operations granted directly to that role or inherited by that role from other roles.</p>
+
+<p>The function is valid only if:</p>
+<ul><li>
+<p>the role is a member of the ROLES data set</p>
+</li><li>
+<p>the object is a member of the OBJS data set</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+281
+282
+283</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 281</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_role_operations_on_object'>role_operations_on_object</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='comma'>,</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span> <span class='comment'>#=&gt; operations
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_objects_include?'>objects_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="role_permissions-instance_method">
+  
+    #<strong>role_permissions</strong>(role)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the set of all permissions (op, obj), granted to or inherited by a given role.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the role is a member of the ROLES data set</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+238
+239
+240</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 238</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_role_permissions'>role_permissions</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span> <span class='comment'>#=&gt; permissions
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_roles_include?'>roles_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_role'>role</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="session_permissions-instance_method">
+  
+    #<strong>session_permissions</strong>(session)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the permissions of the session session, i.e., the permissions assigned to its active roles.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the session identifier is a member of the SESSIONS data set</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+269
+270
+271</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 269</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_session_permissions'>session_permissions</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span> <span class='comment'>#=&gt; permissions
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_sessions_include?'>sessions_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="session_roles-instance_method">
+  
+    #<strong>session_roles</strong>(session)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the active roles associated with a session.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the session identifier is a member of the SESSIONS data set</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+258
+259
+260</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 258</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_session_roles'>session_roles</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span> <span class='comment'>#=&gt; roles
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_sessions_include?'>sessions_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_session'>session</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="user_operations_on_object-instance_method">
+  
+    #<strong>user_operations_on_object</strong>(user, object)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the set of operations a given user is permitted to perform on a given object. The set consists of all the operations obtained by the user either directly, or through his/her authorized roles.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the USERS data set</p>
+</li><li>
+<p>the object is a member of the OBJS data set</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+293
+294
+295</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 293</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_user_operations_on_object'>user_operations_on_object</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='comma'>,</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span> <span class='comment'>#=&gt; operations
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id identifier rubyid_objects_include?'>objects_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_object'>object</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="user_permissions-instance_method">
+  
+    #<strong>user_permissions</strong>(user)  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>This function returns the permissions a given user gets through his/her authorized roles.</p>
+
+<p>The function is valid if and only if:</p>
+<ul><li>
+<p>the user is a member of the USERS data set.</p>
+</li></ul>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+248
+249
+250</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/sixarm_ruby_role_based_access_control.rb', line 248</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_user_permissions'>user_permissions</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span> <span class='comment'>#=&gt; permissions
+</span>  <span class='id identifier rubyid_valid_iff'>valid_iff</span><span class='lparen'>(</span><span class='id identifier rubyid_users_include?'>users_include?</span><span class='lparen'>(</span><span class='id identifier rubyid_user'>user</span><span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Apr 25 22:31:05 2019 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.19 (ruby-2.6.3).
+</div>
+
+    </div>
+  </body>
 </html>
-
